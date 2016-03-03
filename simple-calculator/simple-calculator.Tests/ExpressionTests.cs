@@ -47,7 +47,7 @@ namespace simple_calculator.Tests
         }
 
         [TestMethod]
-        [ExpectedException]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
         public void ExpEnsureExpressionHasValidTerms()
         {
             //Arrange
