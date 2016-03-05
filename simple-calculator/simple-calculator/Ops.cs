@@ -10,30 +10,30 @@ namespace simple_calculator.Tests
     {
         public static int Answer = 0;
 
-        public static void Add(int num1, int num2)
+        public static int Add(int num1, int num2)
         {
             Answer = num1 + num2;
-            Console.WriteLine(Answer);
+            return Answer;
         }
-        public static void Minus(int num1, int num2)
+        public static int Minus(int num1, int num2)
         {
             Answer = num1 - num2;
-            Console.WriteLine(Answer);
+            return Answer;
         }
-        public static void Times(int num1, int num2)
+        public static int Times(int num1, int num2)
         {
             Answer = num1 * num2;
-            Console.WriteLine(Answer);
+            return Answer;
         }
-        public static void Divide(int num1, int num2)
+        public static int Divide(int num1, int num2)
         {
             Answer = num1 / num2;
-            Console.WriteLine(Answer);
+            return Answer;
         }
-        public static void Remainder(int num1, int num2)
+        public static int Remainder(int num1, int num2)
         {
             Answer = num1 % num2;
-            Console.WriteLine("You got " + Answer + " left over.");
+            return Answer;
         }
     }
 }
