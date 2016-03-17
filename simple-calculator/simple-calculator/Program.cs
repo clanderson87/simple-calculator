@@ -8,9 +8,10 @@ namespace simple_calculator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-
+            Terminal term = new Terminal();
+            term.GetFirstInput();
         }
     }
 }

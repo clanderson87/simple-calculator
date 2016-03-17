@@ -9,21 +9,42 @@ namespace simple_calculator
     public class Expression
     {
         //setting things up, making operands available to eerething.
-        private static readonly char[] operands = "+-*/%".ToCharArray();
+        public static readonly char[] operands = "+-*/%=".ToCharArray();
+
+        public int GetConstant(char input)
+        {
+            try
+            {
+                return Stack.constant[input];
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
 
         public string[] GetExpressionTerms(string input)
-        { 
+        {
             int splitHere = input.IndexOfAny(operands);
             char Op = input[splitHere];
             string[] result = input.Split(Op);
-            return result;
+            return result; 
         }
 
         public char GetTheOp(string input)
         {
             int splitHere = input.IndexOfAny(operands);
-            char Op = input[splitHere];
-            return Op;
+
+            if (splitHere == -1 && input.Length < 1)
+            {
+                char inputChar = Convert.ToChar(input);
+                return Convert.ToChar(Stack.constant[inputChar]);
+            }
+            else
+            {
+                char Op = input[splitHere];
+                return Op;
+            }
         }
     }
 }

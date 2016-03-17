@@ -57,5 +57,20 @@ namespace simple_calculator.Tests
             string input = "2 # 5";
             string[] actual = my_Exp.GetExpressionTerms(input);
         }
+
+        [TestMethod]
+        public void ExpressionCanICallADictionaryReference()
+        {
+            Expression my_expression = new Expression();
+            Stack.constant.Add('x', 4);
+
+            char input = 'x';
+            int actual = my_expression.GetConstant(input);
+            int expected = 4;
+
+            Assert.AreEqual(expected, actual);
+            
+
+        }
     }
 }
